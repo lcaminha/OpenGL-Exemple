@@ -1,0 +1,20 @@
+#ifndef SHADER_H
+#define SHARER_H
+
+#include <iostream>
+#include <string>
+#include <GL/glew.h>
+
+class Sharer{
+    public:
+         Sharer(const std::string filename);
+         void bind();
+         virtual ~Sharer();
+    private:
+        static std::string loadSharer(const std::string filename);
+        static void ChechShaderError(GLuint shader, GLuint flag, bool isProgram, const std::string& errorMessage);
+        static const unsigned int NUM_SHARER = 2;
+        GLuint m_program;
+        GLuint m_shader[NUM_SHARER];
+};
+#endif
